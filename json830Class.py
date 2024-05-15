@@ -1,4 +1,4 @@
-#Import json file
+#Import json library
 import json
 
 #Dictionary named data
@@ -10,17 +10,17 @@ data = {
   'is_student': False
 }
 
-#write the json file.
+#Open the json file and write to the json file.
 with open('data.json', 'w') as json_file:
-  #Converting into json
+  #Write content of data to json_file
   json.dump(data, json_file, indent=4)
-#Result
+#Print a statement to inform that writing is done.
 print("Data has been written to data.json")
 
 
 #Read a json file
 with open('data.json', 'r') as json_file:
-  #Load a json file
+  #Load a json content to loaded_data
   loaded_data = json.load(json_file)
 
 
@@ -28,7 +28,7 @@ print("Successfully able to read data.json")
 print(loaded_data)
 
 
-#Change values to the json file
+#Change the content of loaded_data
 loaded_data['age'] = 34
 loaded_data['interests'].append('History')
 
@@ -36,8 +36,8 @@ loaded_data['interests'].append('History')
 
 #Rewrite the changes to the json file.
 with open('data.json', 'w') as json_file:
-  #Converting into json
+  #Write contet of loaded_data to json_file
   json.dump(loaded_data, json_file, indent=4)
-#Result
+#Print the json content
 print("Data has been re-written to data.json")
 print(loaded_data)
